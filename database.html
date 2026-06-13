@@ -27,27 +27,24 @@
     >
 
     <div class="filtros">
-
         <button onclick="filtrarTipo('TODOS')">Todos</button>
         <button onclick="filtrarTipo('STR')">STR</button>
         <button onclick="filtrarTipo('DEX')">DEX</button>
         <button onclick="filtrarTipo('QCK')">QCK</button>
         <button onclick="filtrarTipo('PSY')">PSY</button>
         <button onclick="filtrarTipo('INT')">INT</button>
-
     </div>
 
 </section>
 
-<section class="features" id="charactersContainer">
-</section>
+<section id="charactersContainer"></section>
 
-<!-- MODAL BASE (lo usaremos después) -->
+<!-- MODAL -->
 <div id="modal" class="modal">
     <div class="modal-content">
-        <span id="closeModal" class="close">&times;</span>
+        <span id="closeModal">&times;</span>
 
-        <img id="modalImg" src="" alt="">
+        <img id="modalImg">
         <h2 id="modalName"></h2>
         <p id="modalType"></p>
         <p id="modalDesc"></p>
