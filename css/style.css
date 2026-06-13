@@ -90,3 +90,85 @@ header{
     cursor:pointer;
     font-size:20px;
 }
+
+/* ===== RESET BASE ===== */
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#0f1115;
+    color:#fff;
+}
+
+/* ===== TOP BAR ===== */
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 20px;
+    background:#141821;
+}
+
+.nav a{
+    color:#aaa;
+    margin-left:15px;
+    text-decoration:none;
+}
+
+.nav a:hover{
+    color:#fff;
+}
+
+/* ===== HERO ===== */
+.hero{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:60vh;
+    text-align:center;
+    padding:20px;
+}
+
+.hero-box h2{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+.hero-box p{
+    color:#aaa;
+    margin-bottom:20px;
+}
+
+/* BOTÓN */
+.btn{
+    background:#e74c3c;
+    padding:12px 20px;
+    border-radius:10px;
+    color:#fff;
+    text-decoration:none;
+    display:inline-block;
+}
+
+/* ===== GRID FEATURES ===== */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+    padding:20px;
+}
+
+.feature{
+    background:#1a1f2a;
+    padding:15px;
+    border-radius:12px;
+}
+
+.feature p{
+    color:#aaa;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    color:#666;
+}
