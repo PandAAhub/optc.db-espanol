@@ -2,8 +2,15 @@ let personajesGlobal = [];
 
 async function cargarPersonajes() {
 
+    console.log("Iniciando carga...");
+
     const respuesta = await fetch("data/characters.json");
+
+    console.log("Respuesta:", respuesta);
+
     personajesGlobal = await respuesta.json();
+
+    console.log("Personajes:", personajesGlobal);
 
     mostrarPersonajes(personajesGlobal);
 
@@ -23,10 +30,8 @@ function mostrarPersonajes(personajes) {
 
         card.innerHTML = `
             <h3>${personaje.nombre}</h3>
-
-            <p><strong>Tipo:</strong> ${personaje.tipo}</p>
-
-            <p><strong>Clase:</strong> ${personaje.clase}</p>
+            <p>Tipo: ${personaje.tipo}</p>
+            <p>Clase: ${personaje.clase}</p>
         `;
 
         contenedor.appendChild(card);
