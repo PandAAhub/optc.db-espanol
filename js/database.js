@@ -1,7 +1,15 @@
+let personajesGlobal = [];
+
 async function cargarPersonajes() {
 
     const respuesta = await fetch("data/characters.json");
-    const personajes = await respuesta.json();
+    personajesGlobal = await respuesta.json();
+
+    mostrarPersonajes(personajesGlobal);
+
+}
+
+function mostrarPersonajes(personajes) {
 
     const contenedor = document.getElementById("charactersContainer");
 
@@ -14,18 +22,31 @@ async function cargarPersonajes() {
         card.classList.add("card");
 
         card.innerHTML = `
-
             <h3>${personaje.nombre}</h3>
 
             <p><strong>Tipo:</strong> ${personaje.tipo}</p>
 
             <p><strong>Clase:</strong> ${personaje.clase}</p>
-
         `;
 
         contenedor.appendChild(card);
 
     });
+
+}
+
+function buscarPersonajes() {
+
+    const texto = document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase();
+
+    const filtrados = personajesGlobal.filter(personaje =>
+        personaje.nombre.toLowerCase().includes(texto)
+    );
+
+    mostrarPersonajes(filtrados);
 
 }
 
