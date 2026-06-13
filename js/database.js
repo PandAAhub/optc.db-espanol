@@ -49,7 +49,20 @@ function buscarPersonajes() {
     mostrarPersonajes(filtrados);
 
 }
+function filtrarTipo(tipo){
 
+    if(tipo === "TODOS"){
+        mostrarPersonajes(personajesGlobal);
+        return;
+    }
+
+    const filtrados = personajesGlobal.filter(personaje =>
+        personaje.tipo === tipo
+    );
+
+    mostrarPersonajes(filtrados);
+
+}
 cargarPersonajes();
 
 .filtros{
