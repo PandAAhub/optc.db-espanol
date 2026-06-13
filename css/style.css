@@ -1,37 +1,26 @@
 body{
     margin:0;
-    font-family:Arial, sans-serif;
+    font-family:Arial;
     background:#0f1115;
     color:#fff;
 }
 
-/* HEADER */
 header{
-    background:#141821;
     padding:15px;
+    background:#141821;
+    text-align:center;
 }
 
-/* HERO */
 .hero{
     text-align:center;
     padding:20px;
 }
 
-/* CONTROLES */
-.controls{
-    margin-top:10px;
-}
-
 #searchInput{
-    padding:12px;
-    width:260px;
-    border-radius:10px;
+    padding:10px;
+    width:250px;
+    border-radius:8px;
     border:none;
-    outline:none;
-}
-
-.filtros{
-    margin-top:10px;
 }
 
 .filtros button{
@@ -39,35 +28,33 @@ header{
     padding:8px 12px;
     border:none;
     border-radius:8px;
-    cursor:pointer;
     background:#2a2f3a;
     color:#fff;
+    cursor:pointer;
 }
 
-/* GRID */
 .container{
     max-width:1200px;
-    margin:0 auto;
+    margin:auto;
     padding:10px;
 }
 
 #charactersContainer{
     display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(170px,1fr));
+    grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
     gap:15px;
 }
 
-/* CARD */
 .card{
     background:#1a1f2a;
-    border-radius:15px;
+    border-radius:12px;
     overflow:hidden;
     cursor:pointer;
     transition:0.2s;
 }
 
 .card:hover{
-    transform:scale(1.04);
+    transform:scale(1.05);
 }
 
 .card img{
@@ -81,7 +68,6 @@ header{
     padding:10px;
 }
 
-/* MODAL */
 .modal{
     display:none;
     position:fixed;
@@ -94,13 +80,9 @@ header{
 .modal-content{
     background:#1e2430;
     padding:20px;
-    border-radius:15px;
+    border-radius:12px;
     width:300px;
     text-align:center;
-}
-
-.modal-content img{
-    width:100%;
 }
 
 #closeModal{
