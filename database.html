@@ -5,34 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Base de Datos - OPTC Database Español</title>
 
+<!-- CSS -->
 <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
 
 <header>
-    <div class="logo">
-        <h1>🏴‍☠️ OPTC Database Español</h1>
-    </div>
+    <h1>🏴‍☠️ OPTC Database Español</h1>
 </header>
 
 <section class="hero">
 
     <h2>Base de Datos</h2>
 
-    <div class="controls">
+    <input type="text" id="searchInput" placeholder="Buscar personaje...">
 
-        <input type="text" id="searchInput" placeholder="Buscar personaje...">
-
-        <div class="filtros">
-            <button onclick="filtrarTipo('TODOS')">Todos</button>
-            <button onclick="filtrarTipo('STR')">STR</button>
-            <button onclick="filtrarTipo('DEX')">DEX</button>
-            <button onclick="filtrarTipo('QCK')">QCK</button>
-            <button onclick="filtrarTipo('PSY')">PSY</button>
-            <button onclick="filtrarTipo('INT')">INT</button>
-        </div>
-
+    <div class="filtros">
+        <button onclick="filtrarTipo('TODOS')">Todos</button>
+        <button onclick="filtrarTipo('STR')">STR</button>
+        <button onclick="filtrarTipo('DEX')">DEX</button>
+        <button onclick="filtrarTipo('QCK')">QCK</button>
+        <button onclick="filtrarTipo('PSY')">PSY</button>
+        <button onclick="filtrarTipo('INT')">INT</button>
     </div>
 
 </section>
@@ -55,6 +50,7 @@
     </div>
 </div>
 
+<!-- JS -->
 <script src="./js/database.js"></script>
 
 </body>
