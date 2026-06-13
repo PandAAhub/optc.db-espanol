@@ -277,3 +277,44 @@ header{
     width:320px;
     text-align:center;
 }
+
+/* ===== FIX LAYOUT DATABASE ===== */
+
+.container{
+    max-width:1200px;
+    margin:0 auto;
+    padding:10px;
+}
+
+/* evita conflicto con home */
+#charactersContainer{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(170px,1fr));
+    gap:15px;
+}
+
+/* card base estable (NO rompe tu UI) */
+.card{
+    background:#1a1f2a;
+    border-radius:15px;
+    overflow:hidden;
+    cursor:pointer;
+    transition:0.2s;
+    color:white;
+}
+
+.card:hover{
+    transform:scale(1.03);
+}
+
+.card-img img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    display:block;
+}
+
+.card-info{
+    padding:10px;
+    text-align:center;
+}
