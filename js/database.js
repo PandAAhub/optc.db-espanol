@@ -2,20 +2,19 @@ let personajesGlobal = [];
 let tipoFiltro = "TODOS";
 
 async function cargarPersonajes() {
-    const respuesta = await fetch("./data/characters.json");
-    personajesGlobal = await respuesta.json();
+    const res = await fetch("./data/characters.json");
+    personajesGlobal = await res.json();
 
     mostrarPersonajes(personajesGlobal);
     initEventos();
 }
 
-/* RENDER CARDS */
-function mostrarPersonajes(personajes) {
+function mostrarPersonajes(lista) {
 
     const contenedor = document.getElementById("charactersContainer");
     contenedor.innerHTML = "";
 
-    personajes.forEach(p => {
+    lista.forEach(p => {
 
         const card = document.createElement("div");
         card.classList.add("card");
@@ -37,7 +36,6 @@ function mostrarPersonajes(personajes) {
     });
 }
 
-/* FILTROS + SEARCH */
 function aplicarFiltros() {
 
     const texto = document.getElementById("searchInput").value.toLowerCase();
@@ -59,19 +57,16 @@ function aplicarFiltros() {
     mostrarPersonajes(resultado);
 }
 
-/* BOTONES */
 function filtrarTipo(tipo) {
     tipoFiltro = tipo;
     aplicarFiltros();
 }
 
-/* SEARCH */
 function initEventos() {
     document.getElementById("searchInput")
         .addEventListener("input", aplicarFiltros);
 }
 
-/* MODAL */
 function abrirModal(p) {
 
     document.getElementById("modal").style.display = "flex";
@@ -82,7 +77,6 @@ function abrirModal(p) {
     document.getElementById("modalDesc").textContent = p.descripcion || "Sin descripción";
 }
 
-/* CLOSE MODAL */
 document.getElementById("closeModal").addEventListener("click", () => {
     document.getElementById("modal").style.display = "none";
 });
