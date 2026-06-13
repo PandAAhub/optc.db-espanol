@@ -17,30 +17,33 @@
 </header>
 
 <section class="hero">
+
     <h2>Base de Datos</h2>
 
-<input
-    type="text"
-    id="searchInput"
-    placeholder="Buscar personaje..."
-    onkeyup="buscarPersonajes()"
-    style="padding:15px; width:300px; border-radius:10px;"
->
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Buscar personaje..."
+        onkeyup="buscarPersonajes()"
+        style="padding:15px; width:300px; border-radius:10px;"
+    >
+
     <div class="filtros">
 
-    <button onclick="filtrarTipo('TODOS')">Todos</button>
+        <button onclick="filtrarTipo('TODOS')">Todos</button>
 
-    <button onclick="filtrarTipo('STR')">STR</button>
+        <button onclick="filtrarTipo('STR')">STR</button>
 
-    <button onclick="filtrarTipo('DEX')">DEX</button>
+        <button onclick="filtrarTipo('DEX')">DEX</button>
 
-    <button onclick="filtrarTipo('QCK')">QCK</button>
+        <button onclick="filtrarTipo('QCK')">QCK</button>
 
-    <button onclick="filtrarTipo('PSY')">PSY</button>
+        <button onclick="filtrarTipo('PSY')">PSY</button>
 
-    <button onclick="filtrarTipo('INT')">INT</button>
+        <button onclick="filtrarTipo('INT')">INT</button>
 
-</div>
+    </div>
+
 </section>
 
 <section class="features" id="charactersContainer">
