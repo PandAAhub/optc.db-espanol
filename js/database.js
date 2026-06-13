@@ -16,12 +16,21 @@ function mostrarPersonajes(personajes) {
     personajes.forEach(personaje => {
 
         const card = document.createElement("div");
-        card.classList.add("card");
+        card.classList.add("card", `rarity-${(personaje.rareza || "r").toLowerCase()}`);
 
         card.innerHTML = `
-            <h3>${personaje.nombre}</h3>
-            <p>Tipo: ${personaje.tipo}</p>
-            <p>Clase: ${personaje.clase}</p>
+            <div class="card-top">
+                <span class="type ${personaje.tipo}">${personaje.tipo}</span>
+            </div>
+
+            <div class="card-img">
+                <img src="${personaje.img}" alt="${personaje.nombre}">
+            </div>
+
+            <div class="card-info">
+                <h3>${personaje.nombre}</h3>
+                <p class="class">${personaje.clase}</p>
+            </div>
         `;
 
         card.addEventListener("click", () => abrirModal(personaje));
