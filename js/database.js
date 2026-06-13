@@ -49,9 +49,10 @@ function buscarPersonajes() {
     mostrarPersonajes(filtrados);
 
 }
-function filtrarTipo(tipo){
 
-    if(tipo === "TODOS"){
+function filtrarTipo(tipo) {
+
+    if (tipo === "TODOS") {
         mostrarPersonajes(personajesGlobal);
         return;
     }
@@ -63,24 +64,5 @@ function filtrarTipo(tipo){
     mostrarPersonajes(filtrados);
 
 }
+
 cargarPersonajes();
-
-.filtros{
-    display:flex;
-    justify-content:center;
-    gap:10px;
-    margin-top:20px;
-    flex-wrap:wrap;
-}
-
-.filtros button{
-    padding:10px 20px;
-    border:none;
-    border-radius:10px;
-    cursor:pointer;
-    font-weight:bold;
-}
-
-.filtros button:hover{
-    transform:scale(1.05);
-}
