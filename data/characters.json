@@ -1,1 +1,23 @@
-[]
+[
+  {
+    "id": 1,
+    "nombre": "Monkey D. Luffy Gear 5",
+    "tipo": "PSY",
+    "clase": "Free Spirit",
+    "imagen": "https://optc-db.github.io/images/characters/figure/4175.png"
+  },
+  {
+    "id": 2,
+    "nombre": "Roronoa Zoro",
+    "tipo": "DEX",
+    "clase": "Slasher",
+    "imagen": "https://optc-db.github.io/images/characters/figure/4020.png"
+  },
+  {
+    "id": 3,
+    "nombre": "Yamato",
+    "tipo": "INT",
+    "clase": "Free Spirit",
+    "imagen": "https://optc-db.github.io/images/characters/figure/3762.png"
+  }
+]
