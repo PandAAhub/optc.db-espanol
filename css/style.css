@@ -1,77 +1,98 @@
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#0f1115;
+    color:#fff;
+}
+
+/* HEADER */
+header{
+    background:#141821;
+    padding:15px;
+}
+
+/* HERO */
+.hero{
+    text-align:center;
+    padding:20px;
+}
+
+/* CONTROLES */
+.controls{
+    margin-top:10px;
+}
+
+#searchInput{
+    padding:12px;
+    width:260px;
+    border-radius:10px;
+    border:none;
+    outline:none;
+}
+
+.filtros{
+    margin-top:10px;
+}
+
+.filtros button{
+    margin:5px;
+    padding:8px 12px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    background:#2a2f3a;
+    color:#fff;
+}
+
+/* GRID */
+.container{
+    max-width:1200px;
+    margin:0 auto;
+    padding:10px;
+}
+
 #charactersContainer{
     display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
+    grid-template-columns:repeat(auto-fill,minmax(170px,1fr));
     gap:15px;
-    padding:20px;
 }
 
 /* CARD */
 .card{
-    background:#121212;
+    background:#1a1f2a;
     border-radius:15px;
     overflow:hidden;
     cursor:pointer;
-    position:relative;
-    transition:0.25s;
+    transition:0.2s;
 }
 
 .card:hover{
-    transform:scale(1.05);
+    transform:scale(1.04);
 }
 
-/* IMG */
-.card-img img{
+.card img{
     width:100%;
     height:180px;
     object-fit:cover;
 }
 
-/* INFO */
 .card-info{
     text-align:center;
     padding:10px;
-    color:#fff;
 }
-
-.card-info h3{
-    font-size:14px;
-    margin:0;
-}
-
-.card-info p{
-    font-size:12px;
-    color:#aaa;
-}
-
-/* TYPE */
-.type{
-    padding:3px 8px;
-    border-radius:6px;
-    font-size:11px;
-    color:#fff;
-}
-
-.type.STR{background:#e74c3c;}
-.type.DEX{background:#2ecc71;}
-.type.QCK{background:#3498db;}
-.type.PSY{background:#f1c40f;color:#000;}
-.type.INT{background:#9b59b6;}
 
 /* MODAL */
 .modal{
     display:none;
     position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
+    inset:0;
     background:rgba(0,0,0,0.8);
     justify-content:center;
     align-items:center;
 }
 
 .modal-content{
-    background:#222;
+    background:#1e2430;
     padding:20px;
     border-radius:15px;
     width:300px;
@@ -86,317 +107,4 @@
     float:right;
     cursor:pointer;
     font-size:20px;
-}
-
-/* ===== OPTC GACHA UPGRADE (SAFE) ===== */
-
-#charactersContainer{
-    display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
-    gap:15px;
-    padding:20px;
-}
-
-/* CARD sin romper tu estilo */
-.card{
-    border-radius:15px;
-    overflow:hidden;
-    cursor:pointer;
-    transition:0.25s;
-}
-
-/* hover suave sin cambiar tu UI */
-.card:hover{
-    transform:scale(1.04);
-}
-
-/* imagen limpia */
-.card-img img{
-    width:100%;
-    height:180px;
-    object-fit:cover;
-    display:block;
-}
-
-/* tipo badge */
-.type{
-    padding:3px 8px;
-    border-radius:6px;
-    font-size:11px;
-    color:#fff;
-}
-
-/* solo colores, no fondo global */
-.type.STR{background:#e74c3c;}
-.type.DEX{background:#2ecc71;}
-.type.QCK{background:#3498db;}
-.type.PSY{background:#f1c40f;color:#000;}
-.type.INT{background:#9b59b6;}
-
-/* modal sin destruir tu diseño */
-.modal{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,0.75);
-    justify-content:center;
-    align-items:center;
-}
-
-.modal-content{
-    background:#1e1e1e;
-    padding:20px;
-    border-radius:15px;
-    width:320px;
-    color:#fff;
-}
-
-/* ===== OPTC DATABASE FIX UI ===== */
-
-body{
-    margin:0;
-    font-family:Arial, sans-serif;
-    background:#0f1115;
-    color:#fff;
-}
-
-/* HEADER limpio */
-header{
-    background:#141821;
-    padding:15px 20px;
-}
-
-/* HERO solo como zona de control */
-.hero{
-    text-align:center;
-    padding:20px;
-}
-
-/* INPUT */
-#searchInput{
-    padding:12px;
-    width:280px;
-    border-radius:10px;
-    border:none;
-    outline:none;
-    margin-top:10px;
-}
-
-/* FILTROS */
-.filtros{
-    margin-top:15px;
-}
-
-.filtros button{
-    margin:5px;
-    padding:8px 12px;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    background:#2a2f3a;
-    color:#fff;
-}
-
-.filtros button:hover{
-    background:#3a4150;
-}
-
-/* GRID personajes */
-#charactersContainer{
-    display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(170px,1fr));
-    gap:15px;
-    padding:20px;
-}
-
-/* CARD base estable */
-.card{
-    background:#1a1f2a;
-    border-radius:15px;
-    overflow:hidden;
-    cursor:pointer;
-    transition:0.2s;
-}
-
-.card:hover{
-    transform:scale(1.04);
-}
-
-/* imagen */
-.card-img img{
-    width:100%;
-    height:180px;
-    object-fit:cover;
-    display:block;
-}
-
-/* info */
-.card-info{
-    padding:10px;
-    text-align:center;
-}
-
-.card-info h3{
-    font-size:14px;
-    margin:0;
-}
-
-.card-info p{
-    font-size:12px;
-    color:#aaa;
-}
-
-/* TYPE */
-.type{
-    padding:3px 8px;
-    border-radius:6px;
-    font-size:11px;
-    color:#fff;
-}
-
-.type.STR{background:#e74c3c;}
-.type.DEX{background:#2ecc71;}
-.type.QCK{background:#3498db;}
-.type.PSY{background:#f1c40f;color:#000;}
-.type.INT{background:#9b59b6;}
-
-/* MODAL limpio */
-.modal{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,0.75);
-    justify-content:center;
-    align-items:center;
-}
-
-.modal-content{
-    background:#1e2430;
-    padding:20px;
-    border-radius:15px;
-    width:320px;
-    text-align:center;
-}
-
-/* ===== FIX LAYOUT DATABASE ===== */
-
-.container{
-    max-width:1200px;
-    margin:0 auto;
-    padding:10px;
-}
-
-/* evita conflicto con home */
-#charactersContainer{
-    display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(170px,1fr));
-    gap:15px;
-}
-
-/* card base estable (NO rompe tu UI) */
-.card{
-    background:#1a1f2a;
-    border-radius:15px;
-    overflow:hidden;
-    cursor:pointer;
-    transition:0.2s;
-    color:white;
-}
-
-.card:hover{
-    transform:scale(1.03);
-}
-
-.card-img img{
-    width:100%;
-    height:180px;
-    object-fit:cover;
-    display:block;
-}
-
-.card-info{
-    padding:10px;
-    text-align:center;
-}
-
-/* ===== FIX OPTC DATABASE LAYOUT ===== */
-
-body{
-    margin:0;
-    font-family:Arial, sans-serif;
-    background:#0f1115;
-    color:#fff;
-}
-
-/* HERO limpio */
-.hero{
-    text-align:center;
-    padding:20px;
-}
-
-/* controles agrupados */
-.controls{
-    margin-top:10px;
-}
-
-/* input limpio */
-#searchInput{
-    padding:12px;
-    width:280px;
-    border-radius:10px;
-    border:none;
-    outline:none;
-}
-
-/* botones */
-.filtros{
-    margin-top:10px;
-}
-
-.filtros button{
-    margin:5px;
-    padding:8px 12px;
-    border:none;
-    border-radius:8px;
-    background:#2a2f3a;
-    color:#fff;
-    cursor:pointer;
-}
-
-/* grid estable */
-.container{
-    max-width:1200px;
-    margin:0 auto;
-    padding:10px;
-}
-
-#charactersContainer{
-    display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(170px,1fr));
-    gap:15px;
-}
-
-/* card base */
-.card{
-    background:#1a1f2a;
-    border-radius:15px;
-    overflow:hidden;
-    cursor:pointer;
-    transition:0.2s;
-}
-
-.card:hover{
-    transform:scale(1.04);
-}
-
-.card-img img{
-    width:100%;
-    height:180px;
-    object-fit:cover;
-    display:block;
-}
-
-.card-info{
-    text-align:center;
-    padding:10px;
 }
