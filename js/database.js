@@ -1,5 +1,7 @@
 let personajesGlobal = [];
+let tipoFiltro = "TODOS";
 
+/* CARGA */
 async function cargarPersonajes() {
     const respuesta = await fetch("data/characters.json");
     personajesGlobal = await respuesta.json();
@@ -8,52 +10,49 @@ async function cargarPersonajes() {
     initEventos();
 }
 
+/* MOSTRAR CARDS */
 function mostrarPersonajes(personajes) {
 
     const contenedor = document.getElementById("charactersContainer");
     contenedor.innerHTML = "";
 
-    personajes.forEach(personaje => {
+    personajes.forEach(p => {
 
         const card = document.createElement("div");
-        card.classList.add("card", `rarity-${(personaje.rareza || "r").toLowerCase()}`);
+
+        card.classList.add("card");
 
         card.innerHTML = `
             <div class="card-top">
-                <span class="type ${personaje.tipo}">${personaje.tipo}</span>
+                <span class="type ${p.tipo}">${p.tipo}</span>
             </div>
 
             <div class="card-img">
-                <img src="${personaje.img}" alt="${personaje.nombre}">
+                <img src="${p.img}" alt="${p.nombre}">
             </div>
 
             <div class="card-info">
-                <h3>${personaje.nombre}</h3>
-                <p class="class">${personaje.clase}</p>
+                <h3>${p.nombre}</h3>
+                <p>${p.clase}</p>
             </div>
         `;
 
-        card.addEventListener("click", () => abrirModal(personaje));
+        card.addEventListener("click", () => abrirModal(p));
 
         contenedor.appendChild(card);
     });
 }
 
-/* 🔍 BUSCADOR + FILTRO COMBINADO */
+/* FILTRO + BUSCADOR */
 function aplicarFiltros() {
 
-    const texto = document
-        .getElementById("searchInput")
-        .value
-        .toLowerCase();
-
-    const tipoActivo = window.tipoFiltro || "TODOS";
+    const texto = document.getElementById("searchInput").value.toLowerCase();
 
     let resultado = personajesGlobal;
 
-    if (tipoActivo !== "TODOS") {
+    if (tipoFiltro !== "TODOS") {
         resultado = resultado.filter(p =>
-            p.tipo.toUpperCase().trim() === tipoActivo
+            p.tipo.toUpperCase() === tipoFiltro
         );
     }
 
@@ -66,31 +65,33 @@ function aplicarFiltros() {
     mostrarPersonajes(resultado);
 }
 
-/* 🔘 FILTRO POR TIPO */
+/* FILTRO BOTONES */
 function filtrarTipo(tipo) {
-    window.tipoFiltro = tipo;
+    tipoFiltro = tipo;
     aplicarFiltros();
 }
 
-/* 🔍 INPUT SEARCH */
+/* BUSCADOR */
 function initEventos() {
     document.getElementById("searchInput")
         .addEventListener("input", aplicarFiltros);
 }
 
-/* 🧠 MODAL */
-function abrirModal(personaje) {
+/* MODAL */
+function abrirModal(p) {
 
     document.getElementById("modal").style.display = "flex";
 
-    document.getElementById("modalName").textContent = personaje.nombre;
-    document.getElementById("modalType").textContent = personaje.tipo;
-    document.getElementById("modalDesc").textContent = personaje.clase;
+    document.getElementById("modalImg").src = p.img;
+    document.getElementById("modalName").textContent = p.nombre;
+    document.getElementById("modalType").textContent = "Tipo: " + p.tipo;
+    document.getElementById("modalDesc").textContent = p.descripcion || "Sin descripción";
 }
 
-/* ❌ CERRAR MODAL */
+/* CERRAR MODAL */
 document.getElementById("closeModal").addEventListener("click", () => {
     document.getElementById("modal").style.display = "none";
 });
 
+/* START */
 cargarPersonajes();
