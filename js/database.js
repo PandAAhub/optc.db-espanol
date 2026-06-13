@@ -2,15 +2,9 @@ let personajesGlobal = [];
 
 async function cargarPersonajes() {
 
-    console.log("Iniciando carga...");
-
     const respuesta = await fetch("data/characters.json");
 
-    console.log("Respuesta:", respuesta);
-
     personajesGlobal = await respuesta.json();
-
-    console.log("Personajes:", personajesGlobal);
 
     mostrarPersonajes(personajesGlobal);
 
@@ -57,14 +51,18 @@ function buscarPersonajes() {
 
 function filtrarTipo(tipo) {
 
+    console.log("Filtrando:", tipo);
+
     if (tipo === "TODOS") {
         mostrarPersonajes(personajesGlobal);
         return;
     }
 
     const filtrados = personajesGlobal.filter(personaje =>
-        personaje.tipo === tipo
+        personaje.tipo.toUpperCase().trim() === tipo
     );
+
+    console.log("Encontrados:", filtrados);
 
     mostrarPersonajes(filtrados);
 
