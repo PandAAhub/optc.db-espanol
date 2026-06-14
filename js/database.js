@@ -20,13 +20,10 @@ function mostrarPersonajes(lista) {
         card.classList.add("card");
 
         card.innerHTML = `
-            <div class="card-img">
-                <img src="${p.img}" alt="${p.nombre}">
-            </div>
-
+            <img src="${p.img}" alt="${p.nombre}">
             <div class="card-info">
                 <h3>${p.nombre}</h3>
-                <p>${p.tipo} - ${p.clase}</p>
+                <p>${p.tipo} / ${p.clase}</p>
             </div>
         `;
 
